@@ -10,7 +10,7 @@ import numpy as np
 import streamlit as st
 from PIL import Image
 from mole_preprocessing import image_preparation
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 
 # creating two containers
 header = st.container()
