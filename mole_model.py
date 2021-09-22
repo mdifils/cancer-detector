@@ -6,11 +6,11 @@ Created on Tue Sep 21 18:57:25 2021
 """
 #---------------------Importing libraries---------------------------------
 import numpy as np
-from keras.applications.mobilenet_v2 import MobileNetV2
-from keras.models import Sequential
-from keras.layers import Dense, Flatten
-from keras.layers import Dropout
-from keras.callbacks import EarlyStopping
+from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Flatten
+from tensorflow.keras.layers import Dropout
+from tensorflow.keras.callbacks import EarlyStopping
 from mole_preprocessing import (splitting_data, create_features_variable,
      split_cancer_from_not_cancer, load_metadata, create_target_variable,
      augmenting_data, plot_history)
@@ -30,6 +30,7 @@ X = create_features_variable(images_cancer, images_not_cancer)
 y = create_target_variable(images_cancer, images_not_cancer)
 
 # Taking a subset of the data
+# max_cancer = 1600 and max_not_cancer = 8300
 X_subset = create_features_variable(images_cancer, images_not_cancer, 1000)
 y_subset = create_target_variable(images_cancer, images_not_cancer, 1000)
 

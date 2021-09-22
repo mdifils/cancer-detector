@@ -9,10 +9,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from typing import Tuple
-import keras
-from keras.preprocessing import image
-from keras.preprocessing.image import ImageDataGenerator
-from keras.applications.mobilenet_v2 import preprocess_input
+import tensorflow
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from sklearn.model_selection import train_test_split
 
 #---------------------Usefull Functions-------------------------------
@@ -157,7 +157,7 @@ def augmenting_data(X_train: np.ndarray, X_val: np.ndarray,
                                                  batch_size=datagen_batch_size)
     return train_generator, validation_generator
 
-def plot_history(history : keras.callbacks.History):
+def plot_history(history : tensorflow.keras.callbacks.History):
     """ This helper function takes the tensorflow.python.keras.callbacks.
     History that is output from your `fit` method to plot the loss and 
     accuracy of the training and validation set.
