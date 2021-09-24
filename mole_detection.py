@@ -48,7 +48,7 @@ def delete_images():
         elif file.endswith('.png'):
             os.remove(file)
 
-model = load_model('Mobilenet_model', compile=False)
+model = load_model('melanomia.h5', compile=False)
 
 with header:
     st.title("Melona Detection")
